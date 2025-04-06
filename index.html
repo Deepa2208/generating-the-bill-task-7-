@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bill Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Bill Generator</h1>
+
+      <section class="section">
+        <h2>Buyer Details</h2>
+        <div class="input-group">
+          <input type="text" id="buyerName" placeholder="Buyer Name" />
+          <input type="text" id="buyerAddress" placeholder="Address" />
+          <input type="text" id="buyerContact" placeholder="Contact Number" />
+          <input type="email" id="buyerEmail" placeholder="Email" />
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Transaction Details</h2>
+        <div class="input-group">
+          <input type="text" id="transactionId" placeholder="Transaction ID" />
+          <input type="date" id="transactionDate" />
+          <select id="paymentMethod">
+            <option value="Cash">Cash</option>
+            <option value="Card">Card</option>
+            <option value="UPI">UPI</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Product Details</h2>
+        <div class="input-group">
+          <input type="text" id="productName" placeholder="Product Name" />
+          <input type="number" id="productQty" placeholder="Quantity" />
+          <input type="number" id="productPrice" placeholder="Unit Price" />
+          <button class="add-btn" onclick="addProduct()">Add Product</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Bill Summary</h2>
+        <table id="productTable">
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Quantity</th>
+              <th>Unit Price</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+
+        <div class="totals">
+          <h3 id="totalAmount">Total: ₹0</h3>
+        </div>
+      </section>
+
+      <div class="actions">
+        <button class="print-btn" onclick="window.print()">Print Bill</button>
+        <button class="save-btn" onclick="saveBill()">Save to Database</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
